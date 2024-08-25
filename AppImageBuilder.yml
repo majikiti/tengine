@@ -1,0 +1,22 @@
+# appimage-builder recipe see https://appimage-builder.readthedocs.io for details
+
+version: 1
+
+script:
+  - rm -rf $TARGET_APPDIR | true
+  - dub build -b release -c sdl-static
+  - mkdir -p $TARGET_APPDIR
+  - cp build/eluga $TARGET_APPDIR/app
+  - cp -r assets $TARGET_APPDIR
+
+AppDir:
+  app_info:
+    id: io.github.majikiti.eluga
+    name: Eluga
+    #icon: dmd-doc
+    version: 1.0.0
+    exec: app
+
+AppImage:
+  arch: x86_64
+  update-information: guess
