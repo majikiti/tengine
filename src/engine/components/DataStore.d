@@ -48,8 +48,8 @@ class DataStore(T): Component if(is(T == struct)) {
       datadir = environment.get("XDG_DATA_HOME");
       if(!datadir) {
         auto home = environment.get("HOME");
-        if(!home) return "/tmp/eluga";
-        datadir = home ~ "/.local/share/eluga";
+        if(!home) return "/tmp/tengine";
+        datadir = home ~ "/.local/share/tengine";
       }
     }
     return datadir;
