@@ -1,0 +1,3 @@
+name "editor"
+dependency "tengine" path=".."
+targetPath "build"
